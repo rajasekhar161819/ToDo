@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update</title>
+  <style>
+    h3{
+      text-align: center;
+      color: rgb(13, 73, 223);
+    }
+  
+    .update-form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+        padding-top: 11px;
+        border: 1px solid #ccc;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+    }
+  
+    .update-form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .update-form button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+  
+    .update-form button {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 8px;
+    }
+  
+    .update-form button:hover {
+        background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="update-form">
+    <h3>Update Task</h3>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div>
+          <h4>Task Tittle</h4>
+          {{ form.tasktitle }}
+        </div>
+  
+        <div>
+          <h4>Task Description</h4>
+          {{ form.taskdesc }}
+        </div>
+  
+        <input type="hidden" name="action" value="Update">
+        <button type="submit" name="UpdateButton" id="UpdateButton">Update</button>
+    </form>
+  </div>
+</body>
+</html>
+
